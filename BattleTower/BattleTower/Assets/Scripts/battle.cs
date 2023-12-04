@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Battle : MonoBehaviour
 {
-    public int CalculateDamage(Move move, Monster m1, Monster m2)
+    public double CalculateDamage(Move move, Monster m1, Monster m2)
     {
         double typeEffectiveness = CalculateEffectiveness(move.type, m2.type1, m2.type2);
-        float damage = 42f;
-        float attackOverDefense = 0;
+        double damage = 42f;
+        double attackOverDefense = 0;
         damage *= move.baseDamage;
         if(move.physical == true)
             attackOverDefense = m1.finalStats[2] / m2.finalStats[3];
